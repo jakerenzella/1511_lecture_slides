@@ -1,0 +1,12 @@
+{
+  "creatorIdentifier" : "net.ia.presenter",
+  "net.ia.presenter" : {
+    "appearance" : "light",
+    "localFileIdentifier" : "6FBFB250-8CF9-4F42-9FB9-8F1A3543955E",
+    "preset" : "Default",
+    "template" : "zurich"
+  },
+  "transient" : false,
+  "type" : "net.daringfireball.markdown",
+  "version" : 2
+}

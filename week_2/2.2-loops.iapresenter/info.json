@@ -1,0 +1,17 @@
+{
+  "creatorIdentifier" : "net.ia.presenter",
+  "net.ia.presenter" : {
+    "appearance" : "light",
+    "bodyfont" : "Roboto",
+    "darkbackgroundcolor" : "Transparent",
+    "lightbackgroundcolor" : "Transparent",
+    "localFileIdentifier" : "A9D6DB0C-DC56-4B90-8F45-4253BD3BEB8E",
+    "logo" : "\/assets\/new-UNSW-logo-png-vertical-crest.png",
+    "preset" : "Default",
+    "template" : "zurich",
+    "titlefont" : "Epilogue"
+  },
+  "transient" : false,
+  "type" : "net.daringfireball.markdown",
+  "version" : 2
+}
