@@ -1,24 +1,17 @@
 # Strings
 ## Or, arrays Pt 2
 ---
-## Call for research participants
-	* We are evaluating some new AI-powered tools
-	* We need your help!
-
-/assets/MicrosoftTeams-image (15).png
-size: contain
-
-
+## Help Sessions and Revision Sessions
 ---
 ## Assignment 1
-	* Released Tuesday
+	* Releasing soon
 	* Watch the Assignment Walkthrough live stream
 	* Watch the Catchup-up video
-	* Submission in Week 7
+	* Submission in Week 7?
 	* Worth 20%
 ---
 ## Arrays recap
-	* A collection of data, all of the same type. (homogonous)
+	* A collection of data, all of the same type. (homogeneous)
 	* We have a single identifier for the entire array
 	* It is a random access data structure, meaning we can access any element in the array at any time
 ---
@@ -229,6 +222,6 @@ fputs(name, stdout)
 
 ---
 ### Feedback
-	[https://forms.office.com/r/Ze4admEWnR](https://forms.office.com/r/Ze4admEWnR)
-/assets/QRCode for COMP1511 23T2 Lecture Feedback.png
+	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
+/assets/QRCode for COMP1511 Lecture Feedback.png
 size: contain

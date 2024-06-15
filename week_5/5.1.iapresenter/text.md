@@ -1,12 +1,6 @@
 # Strings
 ## Or, arrays Pt 2
 ---
-## Assignment 1
-	* Open Tuesday 12pm (today)
-	* Assignment Walkthrough live stream, Thursday at 10am
-	* Submission in Week 7 Tuesday 8pm
-	* Worth 20%
----
 ## Arrays recap
 	* A collection of data, all of the same type. (homogonous)
 	* We have a single identifier for the entire array
@@ -174,9 +168,8 @@ fputs(name, stdout)
 	note: some of these may require `#include <string.h>`
 ---
 ## Demo
-
 ---
 ### Feedback
-	[https://forms.office.com/r/Ze4admEWnR](https://forms.office.com/r/Ze4admEWnR)
-/assets/QRCode for COMP1511 23T2 Lecture Feedback.png
+	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
+/assets/QRCode for COMP1511 Lecture Feedback.png
 size: contain

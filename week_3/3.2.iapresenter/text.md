@@ -216,7 +216,6 @@ while (i < 7) {
 	## Demo
 ---
 ### Feedback
-	[https://forms.office.com/r/Ze4admEWnR](https://forms.office.com/r/Ze4admEWnR)
-	
-/assets/feedback.png
+	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
+/assets/QRCode for COMP1511 Lecture Feedback.png
 size: contain

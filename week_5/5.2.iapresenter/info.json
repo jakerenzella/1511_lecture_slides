@@ -1,9 +1,9 @@
 {
   "creatorIdentifier" : "net.ia.presenter",
   "net.ia.presenter" : {
-    "appearance" : "dark",
+    "appearance" : "light",
     "preset" : "Default",
-    "template" : "tokyo"
+    "template" : "zurich"
   },
   "transient" : false,
   "type" : "net.daringfireball.markdown",

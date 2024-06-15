@@ -1,10 +1,11 @@
 {
   "creatorIdentifier" : "net.ia.presenter",
   "net.ia.presenter" : {
-    "appearance" : "dark",
+    "appearance" : "light",
     "bodyfont" : "Roboto",
+    "localFileIdentifier" : "44C179E8-577F-46D9-A9F9-92EAA7AAAC90",
     "preset" : "Default",
-    "template" : "copenhagen"
+    "template" : "zurich"
   },
   "transient" : false,
   "type" : "net.daringfireball.markdown",

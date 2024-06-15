@@ -88,14 +88,7 @@ Each format flag (%d) is mapped to a passed in variable at the end. Each variabl
 	* `%d` tells scanf to look for a `decimal integer`.
 	* We need to use `&` before the variable, more on that in a few weeks...
 ---
-	<h1 style="background-color: white;"> Week 2 Lecture 1 </h1>
-	<h2 style="background-color: white;"> Control Flow </h2>
-/assets/_77eb898a-542e-4029-ade7-285bf00bccaf.jpeg
-background: true
-x: left
-filter: darken
-
-
+	## Week 2 Lecture 1
 ---
 ## Control Flow
 	* Sometimes we need to make decisions in our programs
@@ -295,7 +288,7 @@ Same syntax as `if` statements!
 int number_of_lines = 5;
 int i = 0;
 
-while (I < number_of_lines) {
+while (i < number_of_lines) {
 	printf("hey!\n");
 	i = i + 1;
 }

@@ -94,7 +94,6 @@ int main() {
 ```
 
 ---
-	# Week 2 Lecture 2
 	## Custom Data Types
 ---
 ## Custom data types

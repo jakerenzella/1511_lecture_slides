@@ -1,9 +1,12 @@
-# COMP1511
+# COMP1511/1911
 ## Programming Fundamentals
 ### Lecture 1
 	 The Beginning
 Welcome!
-
+---
+## What is computing?
+---
+## What is programming?
 ---
 ### Today's Lecture
 	* Important details about the lecture format
@@ -65,6 +68,8 @@ title: Nicole: Australia's #1 ranked Pokemon Go player
 	Let's take 5 mins to introduce yourself to your neighbours (physical or virtual)
 ---
 ### Important Resources
+---
+## COMP1511 vs COMP1911
 ---
 	 ### The Course page: https://cgi.cse.unsw.edu.au/~cs1511/24T1/
 	* All important course information is on this page

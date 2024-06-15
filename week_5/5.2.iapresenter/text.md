@@ -3,19 +3,7 @@
 ## Help Sessions
 	Check timetable!
 ---
-# Research Project Signup Reminder
-	* Help shape the future of DCC
-	* Volunteer 30 mins
-	* Entirely optional
-	* No bearing on your course
-
-/assets/EOI form.png
-size: contain
----
-
-## Revision sessions Week 6
-	- Tuesday 2pm-4pm (Online)
-	- Wednesday 3pm-5pm (K17 Seminar Room)
+## Revision sessions reminder
 ---
 ## Pointers
 ---
@@ -170,6 +158,6 @@ int main(void) {
 	* Very cool!
 ---
 ### Feedback
-	[https://forms.office.com/r/Ze4admEWnR](https://forms.office.com/r/Ze4admEWnR)
-/assets/QRCode for COMP1511 23T2 Lecture Feedback.png
+	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
+/assets/QRCode for COMP1511 Lecture Feedback.png
 size: contain
