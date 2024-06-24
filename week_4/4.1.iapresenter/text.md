@@ -2,6 +2,10 @@
 ## Or, arrays Pt 2
 ---
 ## Help Sessions and Revision Sessions
+	* Week 4 Thursday 11am-1pm - K17 Lvl1 113 Seminar Room (Bring Your Own Device!)
+	* Week 4 Friday 1pm-3pm - Online via Microsoft Teams
+If you are feeling behind, this is a great time for you to revise, get some practice in for topics to fill in any gaps and ask the tutors any questions! 
+	**Sign up at**: https://buytickets.at/comp1511unsw/1290763 (Access Code: "COMP1511", also linked on the forum) 
 ---
 ## Assignment 1
 	* Releasing soon

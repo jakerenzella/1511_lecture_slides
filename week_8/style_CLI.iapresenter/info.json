@@ -2,8 +2,9 @@
   "creatorIdentifier" : "net.ia.presenter",
   "net.ia.presenter" : {
     "appearance" : "light",
+    "localFileIdentifier" : "44DEFEE5-083E-45B5-8941-CFB1E699C954",
     "preset" : "Default",
-    "template" : "san francisco"
+    "template" : "zurich"
   },
   "transient" : false,
   "type" : "net.daringfireball.markdown",

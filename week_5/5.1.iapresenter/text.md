@@ -1,174 +1,158 @@
-# Strings
-## Or, arrays Pt 2
+# Style
+	How to write clean code
 ---
-## Arrays recap
-	* A collection of data, all of the same type. (homogonous)
-	* We have a single identifier for the entire array
-	* It is a random access data structure, meaning we can access any element in the array at any time
----
-### The array declaration syntax
-	`int ice_cream_per_day[7];`
-/assets/Clipboard_3.png
-size: contain
----
-## Declare + initialise
 ```c
-int ice_cream_per_day[7] = {3, 2, 1, 2, 1, 3, 5};
-```
-	^ Note you can only do this when you declare, not later!
-```c
-int ice_cream_per_day[7] = {};
-```
-	^ Will initialise all elements to 0
----
-### Accessing elements
-```c
-int first_day_ice_creams = ice_cream_per_day[0];
-```
-/assets/Clipboard_4.png
-size: contain
-Will retrieve the int 3
----
-### Writing elements
-```c
-ice_cream_per_day[0] = 5;
-```
-/assets/Clipboard_5.png
-size: contain
----
-## Strings!
-	* Strings are multi-character words
-	* `"Jake Renzella"` -> is a string with 13 characters!
-	* Strings are great! They are everywhere!
----
-## Bad news
-	C doesn't have a string data type :(
+struct thingy {
+	int x;
+	double y;
+};
 
-	## Good news
-	C has arrays! :)
----
-### An int array
-```c
-int numbers[7] = {3, 2, 1, 2, 1, 3, 4}
-```
-/assets/Clipboard_4.png
-size: contain
----
-## `char[]`
-/assets/Clipboard_1.png
-size: contain
-	We can build our own string type by using an array of chars!
----
-## Strings in C
-	* A collection of characters
-	* C does know how to work with `char[]`s
-	* There's one important note...
----
-## The null terminator
-	* Remember in C, we don't know when arrays end
-	* We have to keep track of the length ourselves
-	* We can't always do this with `char[]`...
-	* Instead, we place a special character called the null terminator at the end of our character arrays `\0`
----
-## `char[]`
-/assets/Clipboard_1.png
-size: contain
-	Notice the `\0` at the end! This means that C will know when it reaches the end of the array
----
-### How to use strings in C
-	* Because strings are character arrays, the type is `char*`
-	* There are two ways to declare a string, here's one:
-```C
-char word[] = {'h', 'e', 'l', 'l', 'o', '\0'};
-```
----
-### Anyone think that's annoying?
----
-### Strings are very common
-	So there are easier ways to use them:
-```C
-char word[] = "hello";
-```
-	* This is exactly the same as the previous example
-	* It does include the null terminator!
----
-### String literals
-#### `"Jake!"`
-	* uses double quotes `"` to wrap the string literal
-	* single quote for characters!
-	* Used to assign strings to `char[]` easily:
-	`char name[] = "Jake Renzella";`
----
-### Using strings 
-	* printing: `fputs`
-	* scanning: `fgets`
-	* Both included in `<stdio.h>`
-
-
----
-
-## `fgets`
-	* Reads a string from the terminal
-	* `fgets(array[], length, stream)`
-		* **array[]** -> The array that the string will be stored
-		* **length** -> The number of characters that can be read in
-		* **stream** -> The origin of the string (we always use `stdin`)
----
-## `fgets` usage
-```c
-// Declare the array which will contain the string. Note, we don't know how big the string will be, so let's come up with a maximum.
-char my_string[MAX_LENGTH]
-
-// read the string in
-fgets(my_string, MAX_LENGTH, stdin);
-```
----
-## Reading strings in a loop
-	* We can read until `CTRL+D` is entered in the terminal by calling `fgets` in a loop
-	* `fgets()` stops reading when either length-1 characters are read, newline character is read or an end of file is reached, whichever comes first
----
-## Reading strings in a loop
-```c
-#include <stdio.h>
-
-// I know my string will never need to be more than 15 chars
-#define MAX_LENGTH 15
+int calcualte_result(struct thingy x, struct thingy y) {
+	if((x.x - y.y) > (y.x - x.y)) {
+	return 0;
+	} else if ((y.x - x.y) > (x.x - y.y)) {
+		return 1
+	} else {
+		return -1;
+	}
+}
 
 int main(void) {
-    char name[MAX_LENGTH];
-    printf("Enter your name: ");
+	struct thingy x;
+	x.x = 50;
+	x.y = 5.0;
+	
+	y.x = 45;
+	y.x = 2.5;
 
-    // fgets reads the entire string, including the newline character
-    while (fgets(name, MAX_LENGTH, stdin) != NULL) {
-        // every time this runs, we update `name`!
-    }
+	calculate_result(x, y);
 }
 ```
 ---
-## Printing strings
-### `fputs(array[], stream)`
-	* **array[]** -> the character array to be printed
-	* **stream** -> the location to print, always use `stdout` in COMP1511 
-You can printf a string with %s, but there are security problems with this approach, so we avoid it and use fputs
----
-## Printing strings
-```c
-char name[] = "Jake"
-fputs(name, stdout)
-```
-	^ Why doesn't fputs need the LENGTH, like `fget`?
+## Book suggestion
+	* I don't recommend many books
+	* This is a good one
+
+/assets/Screenshot 2023-06-12 at 8.55.58 pm.png.public.png
+size: contain
 
 ---
-### Other useful string functions
-	* `strlen()` -> gives us the length of the string (excluding the `\0`).
-	* `strcpy()` -> copy the contents of one string to another
-	* `strcat()` -> join one string to the end of another (concatenate)
-	* `strcmp()` -> compare two strings
-	* `strchr()` -> find the first occurrence of a character
-	note: some of these may require `#include <string.h>`
+## 1511 has a style guide
+	Follow the style guide (will be marked)
+	There is no *right* style guide, but you should follow it
+
+/assets/Screenshot 2023-06-12 at 8.57.36 pm.png
 ---
-## Demo
+## Let's fix this up:
+```c
+struct thingy {
+	int x;
+	double y;
+};
+
+int calcualte_result(struct thingy x, struct thingy y) {
+	if((x.x - y.y) > (y.x - x.y)) {
+	return 0;
+	} else if ((y.x - x.y) > (x.x - y.y)) {
+		return 1
+	} else {
+		return -1;
+	}
+}
+
+int main(void) {
+	struct thingy x;
+	x.x = 50;
+	x.y = 5.0;
+	
+	y.x = 45;
+	y.x = 2.5;
+
+	calculate_result(x, y);
+}
+```
 ---
+# Command Line Arguments
+---
+## So far...
+	* We can pass input into functions:
+	`int cool_calculation(int x, int y)`
+	* `int x`, `int y` are the input, or arguments into the function
+---
+	We can use the input to determine how the function runs
+```c
+int cool_calculation(int x, int y) {
+	if (x > 0) {
+		// do something when x is positive
+	} else {
+		// do something if x is negative
+	}
+}
+```
+---
+## How can we do this for entire programs?
+---
+# Command Line Arguments
+---
+	## Command Line Arguments 
+	* We can provide input via user input (`scanf`)
+	* Maybe we don't want the input to come from the user, or we already have the input
+	* We would like to be able to pass input to a program
+	* We can modify `main` to allow for CLI
+---
+## before
+```c
+int main(void) {
+
+}
+```
+## after
+```c
+int main(int argc, char *argv[]) {
+	//...
+}
+```
+---
+## Quick demo
+---
+## String to int
+	* Sometimes we want to read in numbers
+	* But all standard input is text-based
+		* `6` is really `"6"`
+---
+### Use the `atoi() function` to convert strings to integers
+	* Stands for ASCII to Integer 
+	Included in `stdlib.h`
+	* `atoi(const char *str)`
+	* `atol`, `atof` and `atoll` all exist (long, float, long long)
+---
+## One more thing:
+	* Counting while loops is common :
+```c
+int i = 0
+while (i < SOME_NUM) { i++; }
+```
+	* So common, that a syntactical sugar exists that makes it a little easier
+---
+## While loop
+```c
+int i = 0
+while (i < SOME_NUM) {
+	...
+	i++;
+}
+```
+## For loop
+```c
+for (int i = 0; i < SOME_NUM; i++) {
+	...
+}
+```
+We save a whopping 2 lines of code!
+---
+## Connect 4
+---
+
 ### Feedback
 	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
 /assets/QRCode for COMP1511 Lecture Feedback.png
