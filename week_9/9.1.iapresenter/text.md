@@ -1,18 +1,11 @@
-# Linked lists Part 3
-## Major Demo
----
-## But First
----
-# Assignment anxiety, progress and general check-in
-Stage 2 is good!
----
+
 ## MyExperience
-	 * We ask for a lot of feedback in COMP1511
+	 * We ask for a lot of feedback in this course
 	 * This is the most important feedback you will provide
 ---
 ## MyExperience
-	* COMP1511 requires a lot of resources to deliver
-	* If you want more courses like COMP1511, please complete the form
+	* COMP1511/COMP1911 requires a lot of resources to deliver
+	* If you want more courses like this one, please complete the form
 	* Completely anonymous, can not be identified
 	* Run by UNSW, not School or Faculty
 ---
@@ -28,7 +21,16 @@ Stage 2 is good!
 ...
 size: contain
 ---
+/assets/Screenshot 2024-07-22 at 10.58.59 AM.png
+size: contain
+/assets/Screenshot 2024-07-22 at 10.59.01 AM.png
+size: contain
+---
 ## Linked Lists
 	Animated explainer: https://www.youtube.com/watch?v=CTW_UOz9d6Q
 ---
-# Linked List Program Demo Pt2
+# Today
+	* Raveen showing off competitive programming skillz
+	* Revision
+	* Demos
+	* Kahoot

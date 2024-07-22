@@ -35,7 +35,7 @@ size: contain
 size: contain
 Is a pointer to a struct node, but not a node itself.
 ---
-## How do we know we're at the end of the lined list?
+## How do we know we're at the end of the linked list?
 /assets/Clipboard_14.png
 size: contain
 
