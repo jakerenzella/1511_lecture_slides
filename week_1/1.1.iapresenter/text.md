@@ -27,13 +27,10 @@ Welcome!
 # Course admins!
 /assets/andrew.jpg
 title: Andrew: Campaigned to change the font size on Aldi chicken nuggets (successfully)
-
 /assets/ibrahim.png
 title: Ibrahim: 12kg of apples weekly
-
 /assets/grace.png
 title: Grace: "Happiest person of the year" 5 times champ
-
 /assets/sofia.png
 title: Andrew: Multi-Award winning travel documentarian
 ---
