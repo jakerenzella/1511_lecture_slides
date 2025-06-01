@@ -91,8 +91,8 @@ title: Andrew: Multi-Award winning travel documentarian
 ## Jake's Major Assignment pro-tips
 	* Start it as early as possible
 	* Don't plagiarise, we'll get ya
-	* Assignment 1 - 20% (Monday 8pm Week 7)
-	* Assignment 2 - 25% (Friday 8pm Week 10)
+	* Assignment 1 - 20% (Monday 6pm Week 7)
+	* Assignment 2 - 25% (Friday 6pm Week 10)
 ---
 ## What to do if you can't COMP1511
 	Feeling unwell? Need to travel back home for an emergency? Dog ate your assignment?
