@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/zurich.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<style>
+:root{
+--logo: ;
+--darkaccent1color: #000;
+--lightaccent1color: #FFF;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #FFF;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #FFF;
+--darkbackgroundcolor: #000;
+--bodyfont: Helvetica;
+--titlefont: Helvetica;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="comp15111911">COMP1511/1911</h1>
+
+<h2 id="programmingfundamentals">Programming Fundamentals</h2>
+
+<h3 id="lecture1">Lecture 1</h3>
+
+<p>The Beginning</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whatiscomputing">What is computing?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whatisprogramming">What is programming?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h3 id="todayslecture">Today's Lecture</h3>
+
+<ul>
+<li>Important details about the lecture format</li>
+<li>How to get help when you need it</li>
+<li>How COMP1511 works</li>
+<li>What is programming?</li>
+<li>Working in Linux</li>
+<li>A first look at C</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light v-split-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whoami">Who am I?</h2>
+
+<ul>
+<li>Programming</li>
+<li>Tennis UTR 5.0</li>
+<li>Coffee</li>
+<li>Favourite languages: Typescript, Python, C!</li>
+</ul></div>
+        <figure style=""><img src="images/73%20questions.png" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light grid-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-4 media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="courseadmins">Course admins!</h1>
+<div class="single-image-wrapper"><figure><img src="images/andrew.jpg" class=" position-center-center"><figcaption> Andrew: Campaigned to change the font size on Aldi chicken nuggets (successfully)</figcaption></figure></div></div><figure style=""><img src="images/ibrahim.png" class=" position-center-center"><figcaption> Ibrahim: 12kg of apples weekly</figcaption></figure><figure style=""><img src="images/grace.png" class=" position-center-center"><figcaption> Grace: "Happiest person of the year" 5 times champ</figcaption></figure><figure style=""><img src="images/sofia.png" class=" position-center-center"><figcaption> Andrew: Multi-Award winning travel documentarian</figcaption></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="wehavelecturemoderators">We have Lecture Moderators!</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light grid-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-1 has-only-media media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><div class="layout-grid media-grid grid-items-+"><figure><img src="images/Clipboard.png" class=" position-center-center"></figure><figure><img src="images/Clipboard_1.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%202.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%203.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%204.png" class=" position-center-center"></figure><figure><img src="images/Clipboard_6.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%205.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%206.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%207.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%208.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%209.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%2011.png" class=" position-center-center"></figure><figure><img src="images/Clipboard%2013.png" class=" position-center-center"></figure></div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="andwecantwaittomeetyouall3">And we can't wait to meet you all &lt;3</h2>
+
+<p>Let's take 5 mins to introduce yourself to your neighbours (physical or virtual)</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="importantresources">Important Resources</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="comp1511vscomp1911">COMP1511 vs COMP1911</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h3 id="thecoursepage:https:cgi.cse.unsw.edu.aucs151125t2">The Course page: https://cgi.cse.unsw.edu.au/~cs1511/25T2/</h3>
+
+<ul>
+<li>All important course information is on this page</li>
+<li>We don't use Moodle!</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h3 id="contacts">Contacts</h3>
+
+<ul>
+<li>Administration issues: cs1511@unsw.edu.au</li>
+<li>Enrolment issues: https://nucleus.unsw.edu.au/en/contact-us</li>
+<li>Equitable Learning Plan: jake.renzella@unsw.edu.au</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h3 id="gettinghelpwithprogramming">Getting help with Programming</h3>
+
+<h4 id="theforum">The Forum</h4>
+
+<ul>
+<li>https://discourse02.cse.unsw.edu.au/25T2/COMP1511/</li>
+<li>Post any content-related questions here!</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="detailsonhelpsessionsrevisionclassesandmorecomingsoon">Details on Help Sessions, Revision Classes, and more coming soon</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="courseformat">Course Format</h3>
+
+<ul>
+<li>Weekly lectures</li>
+<li>Weekly tutelabs</li>
+<li>2x Major Assignments</li>
+<li>1x Final Exam</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="lectureformat">Lecture Format</h2>
+
+<ul>
+<li><strong>Monday</strong>: 11:00 - 13:00 in Ainsworth G03 or Youtube Live</li>
+<li><strong>Tuesday</strong>: 11:00 - Youtube Live</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="tutorialslabs">Tutorials/Labs</h2>
+
+<ul>
+<li>Tutelabs are scheduled as a single 3-hour block</li>
+<li>Go further into topics we cover in the lecture</li>
+<li>hands-on and practical!</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h2 id="jakesmajorassignmentpro-tips">Jake's Major Assignment pro-tips</h2>
+
+<ul>
+<li>Start it as early as possible</li>
+<li>Don't plagiarise, we'll get ya</li>
+<li>Assignment 1 - 20% (Monday 8pm Week 7)</li>
+<li>Assignment 2 - 25% (Friday 8pm Week 10)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h2 id="whattodoifyoucantcomp1511">What to do if you can't COMP1511</h2>
+
+<p>Feeling unwell? Need to travel back home for an emergency? Dog ate your assignment?</p>
+
+<ul>
+<li><strong>special considerations</strong>: https://student.unsw.edu.au/special-consideration</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="codeofconduct">Code of Conduct</h3>
+
+<h4 id="weareheretolearn">We are here to learn</h4>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="plagiarismcontractcheatingchatgptmyneighbourworkedonaccompiler">Plagiarism, Contract Cheating, ChatGPT, My Neighbour worked on a C compiler</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="quickbreak">Quick break</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="programmingfundamentals">Programming Fundamentals</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="computerscompilersprogramscoperatingsystemsunixlinuxterminalfilesfunctionsohmy...">Computers, compilers, programs, C, operating systems, UNIX, Linux, Terminal, Files, functions, oh my...</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whatisacomputer">What is a computer?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whatisprogramming">What is Programming?</h2>
+
+<p>Producing a set of instructions and/or data to achieve a task</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light v-split-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="writingaprogramislikewritingarecipe">Writing a program is like writing a recipe</h2>
+
+<ul>
+<li>You provide the steps required to solve the task</li>
+<li>The computer executes the program, completing it step by step</li>
+<li>Any mistakes in your recipe will alter the final product (and probably ruin it!)</li>
+</ul></div>
+        <figure style=""><img src="images/photo-1466637574441-749b8f19452f.jpg" class=" position-center-center"><figcaption>Photo by Katie Smith on <a href="https://unsplash.com/photos/avocado-tomatoes-eggs-mushrooms-spring-onions-and-leaves-uQs1802D0CQ">Unsplash</a></figcaption></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h2 id="howdotheseprogramsrun">How do these <em>programs</em> run?</h2>
+
+<ul>
+<li>Computers are made up of many programs, many executing at the same time!</li>
+<li>Imagine if your kitchen was used to prepare tens, hundreds of recipes all at once</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light full-image-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/photo-1516775448597-64ce06b9754e.jpg" class=" position-center-center"><figcaption>Photo by Jason Leung on <a href="https://unsplash.com/photos/white-wooden-kitchen-cabinet-7iuasVqkUjs">Unsplash</a></figcaption></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="weneedaheadchefoperatingsystem">We need a head chef (operating system)!</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><p>An Operating System is the interface between the user and the computer hardware</p>
+
+<p>Operating Systems:</p>
+
+<ul>
+<li>Execute user programs</li>
+<li>Make sure programs do what they're supposed to</li>
+<li>Schedules access to limited resources (hardware)</li>
+<li>Make the computer system convenient to use</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="comp15111911">COMP1511/1911</h1>
+
+<h2 id="programmingfundamentals">Programming Fundamentals</h2>
+
+<h3 id="lecture1">Lecture 1</h3>
+
+<p>The Beginning</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light grid-container wide present fit-warning fitted has-light-background" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-1 media-grid" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="howdoprogrammersinteractwithacomputer">How do programmers interact with a computer?</h2>
+<div class="layout-grid media-grid grid-items-2"><figure><img src="images/Clipboard_21.png" class=" size-contain position-center-center"></figure><figure><img src="images/Clipboard_22.png" class=" size-contain position-center-center"></figure></div>
+</div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h2 id="theterminal">The Terminal</h2>
+
+<ul>
+<li>Send text-based commands to our shell</li>
+<li><p>Terminal handles user input, rendering shell output</p>
+<figure><img src="images/Screenshot%202023-09-10%20at%208.30.37%20pm.png" class=" size-contain position-center-center"></figure></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light v-split-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="theshell">The Shell</h2>
+
+<p>The shell, (bash, zsh) is a program that executes commands, and has its own syntax. It returns output which the terminal can display</p></div>
+        <figure style=""><img src="images/Screenshot%202023-09-10%20at%208.32.55%20pm.png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="theprompt">The Prompt</h2>
+
+<p>The prompt is controlled by the shell, and is the line of text which displays some information</p>
+<div class="single-image-wrapper"><figure><img src="images/Screenshot%202023-09-10%20at%208.34.13%20pm.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="howdoiusethisthing">How do I use this thing?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.485rem;">
+        <div style=""><h2 id="importantterminalcommands">Important terminal commands</h2>
+
+<ul>
+<li><code class="hljs ebnf"><span class="hljs-attribute">ls</span></code>: Lists all the files in the current directory:</li>
+<li><code class="hljs dos"><span class="hljs-built_in">mkdir</span> &lt;<span class="hljs-built_in">dir</span> name&gt;</code>Makes a new directory called directoryName:</li>
+<li><code class="hljs dos"><span class="hljs-built_in">cd</span> &lt;<span class="hljs-built_in">dir</span> name&gt;</code>: Changes the current directory to directoryName:</li>
+<li><code class="hljs gams"><span class="hljs-function"><span class="hljs-title">cd</span></span> ..</code>: Moves up one level of directories (one folder level):</li>
+<li><code class="hljs bash"><span class="hljs-built_in">pwd</span></code>: Tells you where you are in the directory structure at the moment:</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.391rem;">
+        <div style=""><h2 id="fileoperations">File operations</h2>
+
+<ul>
+<li><code class="hljs vim"><span class="hljs-keyword">cp</span> <span class="hljs-symbol">&lt;source&gt;</span> <span class="hljs-symbol">&lt;destination&gt;</span></code>: Copy a file from the source to the destination</li>
+<li><p><code class="hljs xml">mv <span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">destination</span>&gt;</span></code>: Move a file from the source to the destination (can also be used to rename)</p>
+
+<p><code class="hljs ebnf"><span class="hljs-attribute">rm filename</span></code>: Remove a file (delete)</p>
+
+<p><em>The -r tag can be added to cp or rm commands to recursively go through a directory and perform the command on all the files</em></p>
+<code class="hljs vim"><span class="hljs-keyword">cp</span> -r <span class="hljs-symbol">&lt;source&gt;</span> <span class="hljs-symbol">&lt;desitnation&gt;</span></code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="butjakeidonthavealinuxcomputer">But Jake! I don't have a Linux computer!!!</h2>
+
+<p>Don't worry! We have one for you &lt;3</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light full-image-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Screenshot%202023-09-10%20at%208.44.49%20pm.png" class=" position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h2 id="letsgetsetuptogether">Let's get set up together</h2>
+
+<ul>
+<li>Log into VLAB</li>
+<li>Open the Terminal</li>
+<li>Run <code class="hljs basic"><span class="hljs-symbol">1511 </span>setup</code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="nowwehavethetoolssocanwewriteoutfirstprogramyet">Now we have the tools, so can we write out first program yet?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><ul>
+<li>Computers execute <em>precise</em> instructions described in a <em>native language</em> to computers</li>
+<li>This language is not easy for us to understand:</li>
+</ul>
+
+<pre><code class="hljs yaml"><span class="hljs-attr">00000000:</span> <span class="hljs-number">0100 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000</span>  
+<span class="hljs-attr">00000010:</span> <span class="hljs-number">1011 </span><span class="hljs-number">0110 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0010</span>
+<span class="hljs-attr">00000020:</span> <span class="hljs-number">0000 </span><span class="hljs-number">0100 </span><span class="hljs-number">0110 </span><span class="hljs-number">0000 </span><span class="hljs-number">1001 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000 </span><span class="hljs-number">0000</span> 
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 0.906rem;">
+        <div style="">
+          <h3 id="computersneedprecision">Computers need precision!</h3>
+
+<p>So machine code is too precise...</p>
+
+<p>Why can't we just say "Hey computer! Add two numbers together!</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light section-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 0.719rem;">
+        <div style="">
+          <h3 id="programming">Programming</h3>
+
+<p><strong>Precise</strong> enough to be translated to machine code</p>
+
+<p><strong>Simple</strong> enough that a human can (sometimes) understand it.</p>
+
+<p>A <em>shared</em> language</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="programminginc">Programming in C</h3>
+
+<p>Why C?</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h3 id="andwhatabeautifullanguage">And what a beautiful language</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello world"</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h2 id="demofollowalongifyoucan">Demo (follow along if you can)</h2>
+
+<ol>
+<li>Create a .c file using the Terminal</li>
+<li>Write our hello world program using VSCode</li>
+<li>Save it</li>
+</ol></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.438rem;">
+        <div style=""><h3 id="letsbreakitdown">Let's break it down</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-comment">// loads the standard input/output library</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-comment">// the main function, the starting point of our program</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-comment">// prints the string to the standard output</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello world"</span>);
+    
+    <span class="hljs-comment">// returns 0 to the operating system</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.578rem;">
+        <div style=""><h3 id="includestdio"><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio&gt;</span></span></code></h3>
+
+<ul>
+<li>Some tasks are so common, that it would be wasteful to have to write them every time</li>
+<li>Common code is available for us, in the standard C library</li>
+<li>We need to tell the compiler which libraries to use</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.578rem;">
+        <div style=""><h2 id="includestdio"><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio&gt;</span></span></code></h2>
+
+<ul>
+<li><p>In this case, we want the Standard Input Output Library</p>
+
+<p>This allows us to make text appear on the terminal</p>
+Almost every C program you will write in this course will have this line</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.438rem;">
+        <div style=""><h2 id="themainblock">The main block</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    ...
+}
+</code></pre>
+
+<ul>
+<li>The <strong>main function</strong></li>
+<li>Every C program must have 1 main function! It's where our program starts!</li>
+<li>Program runs in sequence, line-by-line starting inside the main block</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.578rem;">
+        <div style=""><h2 id="blocksofcode">Blocks of code</h2>
+
+<pre><code class="c hljs c-like">{ 
+    ...
+}
+</code></pre>
+
+<p>Between each <code class="hljs">{</code> and <code class="hljs">}</code> are a block, or group of instructions.</p>
+
+<p>Blocks are very important! They are how we organise code</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h2 id="theprintf">The <code class="hljs arduino">printf</code></h2>
+
+<pre><code class="c hljs c-like">{
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello world!"</span>);
+}
+</code></pre>
+
+<p>printf() makes text appear on the screen. It is a function from stdio.h which we included.</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 0.672rem;">
+        <div style="">
+          <h3 id="return0"><code class="hljs kotlin"><span class="hljs-keyword">return</span> <span class="hljs-number">0</span></code></h3>
+
+<p>return is a C keyword that tells the computer that we are now delivering the output of a function. </p>
+
+<p>A main function that returns 0 is signifying a correct outcome of the program back to the operating system</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.485rem;">
+        <div style=""><h2 id="comments">Comments!</h2>
+
+<ul>
+<li>We place “comments” in programs explain to our future selves or our colleagues what we intended for this code</li>
+</ul>
+
+<p><code class="hljs awk"><span class="hljs-regexp">//</span></code> in front of a line makes it a comment`</p>
+
+<p>If we use <code class="hljs">/*</code> and <code class="hljs gams"><span class="hljs-comment">*/</span></code> everything between them will be comments</p>
+
+<p>The compiler will ignore comments, so they can be anything you want really!</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 0.578rem;">
+        <div style="">
+          <h3 id="compiling">Compiling</h3>
+
+<p>Remember, C is a shared language, so we can be productive</p>
+
+<p>Computers can't understand C</p>
+
+<p>We need to turn our C code into machine code using a compiler</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light section-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 0.625rem;">
+        <div style="">
+          <h3 id="compilersareprograms">Compilers are programs</h3>
+
+<p>That turn code into machine code.</p>
+
+<pre><code class="sh hljs bash">dcc program.c -o helloWorld
+./helloWorld
+</code></pre>
+
+<p>This compiles a C program into an executable called helloWorld, and runs it</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light full-image-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Clipboard_23.png" class=" position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="moderntechnologyhaschangedalot">Modern technology has changed a lot</h2>
+
+<p>But what hasn't changed</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light grid-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-1 media-grid" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h2 id="iscomputersexecutinginstructionsdescribedbyhumans">Is computers executing instructions described by humans</h2>
+<div class="layout-grid media-grid grid-items-4"><figure><img src="images/Clipboard_24.png" class=" position-center-center"></figure><figure><img src="images/Clipboard_25.png" class=" position-center-center"></figure><figure><img src="images/Screenshot%202023-09-10%20at%209.22.58%20pm.png" class=" position-center-center"></figure><figure><img src="images/Clipboard_26.png" class=" position-center-center"></figure></div>
+
+
+</div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="whatwillyoubuild">What will you build?</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light v-split-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="lecturefeedback">Lecture Feedback</h1></div>
+        <figure style=""><img src="images/Screenshot%202025-06-01%20at%208.24.29%E2%80%AFpm.png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>

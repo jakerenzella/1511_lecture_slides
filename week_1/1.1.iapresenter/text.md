@@ -10,59 +10,48 @@ Welcome!
 ---
 ### Today's Lecture
 	* Important details about the lecture format
-	* Who to contact if you need help
+	* How to get help when you need it
 	* How COMP1511 works
-	 * How to get help when you need it
-	 * What is programming?
-	 * Working in Linux
-	 * A first look at C
+	* What is programming?
+	* Working in Linux
+	* A first look at C
 ---
 ## Who am I?
-	*Really, who am I?*
-	* Software Engineer
-	* Tennis lover
-	* Coffee aficionado
-	* Favourite languages (right now): Typescript, Python, C!
+	* Programming
+	* Tennis UTR 5.0
+	* Coffee
+	* Favourite languages: Typescript, Python, C!
 
 /assets/73 questions.png
 ---
 # Course admins!
+/assets/andrew.jpg
+title: Andrew: Campaigned to change the font size on Aldi chicken nuggets (successfully)
 
-/assets/lightroom-1031.jpg
-title: Sofia: Multi-Award winning travel documentarian
+/assets/ibrahim.png
+title: Ibrahim: 12kg of apples weekly
 
-/assets/picture.png
-title: Daniel: 12kg of apples weekly
+/assets/grace.png
+title: Grace: "Happiest person of the year" 5 times champ
 
-/assets/tammy.png
-title: Tammy: "Happiest person of the year" 5 times champ
-
-/assets/nicole.png
-title: Nicole: Australia's #1 ranked Pokemon Go player
-
+/assets/sofia.png
+title: Andrew: Multi-Award winning travel documentarian
 ---
 	### We have Lecture Moderators!
 ---
-/assets/Clipboard_2.png
+/assets/Clipboard.png
 /assets/Clipboard_1.png
-/assets/Clipboard_9.png
-/assets/Clipboard_8.png
-/assets/Clipboard_7.png
+/assets/Clipboard 2.png
+/assets/Clipboard 3.png
+/assets/Clipboard 4.png
 /assets/Clipboard_6.png
-/assets/Clipboard_5.jpg
-/assets/Clipboard_4.png
-/assets/Clipboard_3.png
-/assets/Clipboard_19.png
-/assets/Clipboard_18.png
-/assets/Clipboard_17.png
-/assets/Clipboard_16.jpg
-/assets/Clipboard_15.png
-/assets/Clipboard_14.png
-/assets/Clipboard_13.png
-/assets/Clipboard_12.png
-/assets/Clipboard_11.png
-/assets/Clipboard_10.png
-
+/assets/Clipboard 5.png
+/assets/Clipboard 6.png
+/assets/Clipboard 7.png
+/assets/Clipboard 8.png
+/assets/Clipboard 9.png
+/assets/Clipboard 11.png
+/assets/Clipboard 13.png
 ---
 ## And we can't wait to meet you all <3
 	Let's take 5 mins to introduce yourself to your neighbours (physical or virtual)
@@ -71,11 +60,9 @@ title: Nicole: Australia's #1 ranked Pokemon Go player
 ---
 ## COMP1511 vs COMP1911
 ---
-	 ### The Course page: https://cgi.cse.unsw.edu.au/~cs1511/24T1/
+	 ### The Course page: https://cgi.cse.unsw.edu.au/~cs1511/25T2/
 	* All important course information is on this page
 	* We don't use Moodle!
-	* ***New*** Course Outline has moved! 
-
 ---
 ### Contacts
 	* Administration issues: cs1511@unsw.edu.au
@@ -84,7 +71,7 @@ title: Nicole: Australia's #1 ranked Pokemon Go player
 ---
 ### Getting help with Programming
 	#### The Forum
-	* https://edstem.org/au/
+	* https://discourse02.cse.unsw.edu.au/25T2/COMP1511/
 	* Post any content-related questions here!
 ---
 	### Details on Help Sessions, Revision Classes, and more coming soon
@@ -96,9 +83,8 @@ title: Nicole: Australia's #1 ranked Pokemon Go player
 	* 1x Final Exam
 ---
 ## Lecture Format
-	* **Monday**: 11:00 - 13:00 in Ainsworth G03
-	* **Wednesday**: 11:00 - 13:00 in Ainsworth G03
-	* Youtube Live, or come alone to the theatre
+	* **Monday**: 11:00 - 13:00 in Ainsworth G03 or Youtube Live
+	* **Tuesday**: 11:00 - Youtube Live
 ---
 ## Tutorials/Labs
 	* Tutelabs are scheduled as a single 3-hour block
@@ -128,7 +114,7 @@ title: Nicole: Australia's #1 ranked Pokemon Go player
 ---
 ## Quick break
 ---
-## COMP1511
+# Programming Fundamentals
 ---
 ## Computers, compilers, programs, C, operating systems, UNIX, Linux, Terminal, Files, functions, oh my...
 Throughout COMP1511, we will make sense of it all
@@ -152,13 +138,13 @@ You may go through many iterations before you get it right - mistakes are good!
 	* The computer executes the program, completing it step by step
 	* Any mistakes in your recipe will alter the final product (and probably ruin it!)
 
-/assets/AdobeStock_607031829.jpeg
+/assets/photo-1466637574441-749b8f19452f.jpg "Photo by Katie Smith on [Unsplash](https://unsplash.com/photos/avocado-tomatoes-eggs-mushrooms-spring-onions-and-leaves-uQs1802D0CQ)"
 ---
 ## How do these *programs* run?
 	* Computers are made up of many programs, many executing at the same time!
 	* Imagine if your kitchen was used to prepare tens, hundreds of recipes all at once
 ---
-/assets/AdobeStock_584534126.jpeg
+/assets/photo-1516775448597-64ce06b9754e.jpg "Photo by Jason Leung on [Unsplash](https://unsplash.com/photos/white-wooden-kitchen-cabinet-7iuasVqkUjs)"
 
 In this analogy, the computer is the kitchen. If all these programs ran uncontrolled, it would be a mess!
 ---
@@ -370,3 +356,13 @@ CSIRAC (/ˈsaɪræk/; Commonwealth Scientific and Industrial Research Automatic 
 /assets/Clipboard_26.png
 ---
 ### What will you build?
+---
+# Lecture Feedback
+
+/assets/Screenshot 2025-06-01 at 8.24.29 pm.png
+size: contain
+
+
+
+
+

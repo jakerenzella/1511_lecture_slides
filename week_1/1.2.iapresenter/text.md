@@ -190,7 +190,7 @@ printf("The diameter is %d, pi is %lf", diameter, pi);
 ## Demo
 ---
 ## Break - lecture feedback
-/assets/QRCode for COMP1511 Lecture Feedback.png
+/assets/25t2_lecture_qr.png
 size: contain
 ---
 ## writing 🤝 reading
