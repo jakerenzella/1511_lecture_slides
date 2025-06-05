@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/zurich.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<style>
+:root{
+--logo: /assets/new-unsw-logo-png-vertical-crest.png;
+--darkaccent1color: #000;
+--lightaccent1color: #FFF;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #FFF;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #FFF;
+--darkbackgroundcolor: #000;
+--bodyfont: roboto;
+--titlefont: epilogue;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="week2lecture2">Week 2 Lecture 2</h1>
+
+<h2 id="customdatatypes">Custom Data Types</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h2 id="lastlecture">Last lecture</h2>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="" checked="">Control flow</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="" checked="">conditions</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="" checked="">if/else if/else</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="" checked="">while loops</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="" checked="">scans</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="today">Today</h2>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="">Nested loops</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="">Custom data types</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="livelecturecode">Live lecture code</h2>
+
+<p><a href="https://cgi.cse.unsw.edu.au/~cs1511/25T2/live/week_2/">https://cgi.cse.unsw.edu.au/~cs1511/25T2/live/week_2/</a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="ifstatementsrecap">if statements recap</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-keyword">if</span>(&lt;condition&gt;) {
+    do_if_true();
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(&lt;second_condition&gt;) {
+    do_if_second_true();
+} <span class="hljs-keyword">else</span> {
+    do_if_both_false();
+}   
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><ul>
+<li>A condition is a true/false value (1/0)</li>
+<li>We can execute an expression to calculate the condition
+
+<ul>
+<li><code class="hljs nginx"><span class="hljs-attribute">my_age</span> &gt; drinking_age</code> -&gt; will evaluate to true/1 if age is greater than <code class="hljs ebnf"><span class="hljs-attribute">drinking_age</span></code></li>
+</ul></li>
+<li>Conditions are useful in many places, if statements, while loops, etc.</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h4 id="whileloops">While loops</h4>
+
+<pre><code class="C hljs"><span class="hljs-keyword">while</span>(&lt;condition&gt;) {
+    do_something_over_and_over();
+}
+</code></pre>
+
+<ul>
+<li>if true, run the body</li>
+<li>at end of body, check condition again</li>
+<li>if true, run the body...</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="nestedloops">Nested loops</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><ul>
+<li>Simply having a <code class="hljs actionscript"><span class="hljs-keyword">while</span></code> loop within a <code class="hljs actionscript"><span class="hljs-keyword">while</span></code> loop</li>
+<li>Each time the outer loop runs, the inner loop runs an entire set (the inner loop runs <em>a lot</em>)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="whyarenestedloopsuseful">Why are nested loops useful?</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="whyarenestedloopsuseful">Why are nested loops useful?</h1>
+
+<p>How can we print something like this?</p>
+
+<pre><code class="bash hljs">1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.485rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ROWS 5</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> COLUMNS 5</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">while</span> (i &lt; ROWS) {
+        <span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (j &lt;= COLUMNS) {
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, j);
+            j++;
+        }
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+        i++;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whataboutahalf-pyramid">What about a half-pyramid?</h2>
+
+<pre><code class="bash hljs">1
+12
+123
+1234
+12345
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="customdatatypes">Custom Data Types</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="customdatatypes">Custom data types</h2>
+
+<ul>
+<li>So far, we have used built-in C data types (int, char, double)</li>
+<li>These store a single item of that type</li>
+<li>What if we want to store a group of related data?</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">int</span> my_age = <span class="hljs-number">20</span>;
+    <span class="hljs-keyword">char</span> initial = <span class="hljs-string">'J'</span>;
+    <span class="hljs-keyword">int</span> UNSW_year = <span class="hljs-number">2</span>;
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+<p>^ These three things are related...</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="wecandefineourowndatatypesstructurestostoreacollectionoftypes">We can define our own data types (structures) to store a collection of types</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="enterthestruct">Enter the <code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span></span></code></h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h3 id="unsw_studentstruct">UNSW_student struct</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">UNSW_student</span> {</span>
+    <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">int</span> year_number;
+    <span class="hljs-keyword">double</span> WAM;
+}
+</code></pre>
+
+<p>To use, we simply say:</p>
+
+<p><code class="hljs gauss"><span class="hljs-keyword">struct</span> <span class="hljs-type">UNSW_student</span> Jake;</code></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="structstructures"><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span></span></code> (structures)</h3>
+
+<ul>
+<li>Are variables made up of other variable(s)</li>
+<li>They have a single identifier</li>
+<li>Can still access the sub-variables</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h2 id="definingastruct">Defining a struct</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">struct</span> &lt;</span>struct_name&gt; {
+    data_type identifier;
+    data_type identifier;
+}
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">UNSW_student</span> {</span>
+    <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">int</span> year_number;
+    <span class="hljs-keyword">double</span> WAM;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h2 id="definingastruct">Defining a struct</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">struct</span> &lt;</span>struct_name&gt; {
+    data_type identifier;
+    data_type identifier;
+}
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">UNSW_student</span> {</span>
+    <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">int</span> year_number;
+    <span class="hljs-keyword">double</span> WAM;
+}
+</code></pre>
+
+<p>^ Notice, no values... we are only defining.</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h2 id="fullprogramexample">Full program example</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">UNSW_student</span> {</span>
+    <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">int</span> year_number;
+    <span class="hljs-keyword">double</span> WAM;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">UNSW_student</span> <span class="hljs-title">Jake</span>;</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="buthowdoiaccesstheactualdata...">But how do I access the actual data...</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="the.operator">the <code class="hljs erlang">.</code> operator</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">coordinate</span> {</span>
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">int</span> y;
+}
+</code></pre>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">coordinate</span> <span class="hljs-title">loc</span>;</span>
+
+loc.x
+loc.y
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="demo">DEMO</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="anothercustomdatatype">Another custom data type</h1>
+
+<h2 id="theenum">The <code class="hljs angelscript"><span class="hljs-keyword">enum</span></code></h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="imagineiwantedtostoredaysoftheweek">Imagine I wanted to store days of the week</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-number">1.</span> <span class="hljs-keyword">int</span> day_of_week = <span class="hljs-number">1</span>;
+<span class="hljs-number">2.</span> <span class="hljs-keyword">char</span> day_of_week = <span class="hljs-string">'m'</span>;
+
+<span class="hljs-number">3.</span> <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MONDAY 1</span>
+<span class="hljs-number">4.</span> <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> TUESDAY 2</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="theproblem">The problem</h2>
+
+<ul>
+<li>Have to remember that 1 is Monday</li>
+<li>Could accidentally set 8 to <code class="hljs ebnf"><span class="hljs-attribute">day_of_week</span></code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="enumsthesolution">Enums (the solution)</h2>
+
+<ul>
+<li>Store a range or set of possible values</li>
+<li>Assigns a more meaningful name to state</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="syntax">Syntax</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">enum_name</span> {</span> state_1, state_2, state_3... };
+</code></pre>
+
+<h2 id="example">Example</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">weekdays</span> {</span> Mon, Tue, Wed, Thu, Fri, Sat, Sun };
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="usingenums">Using enums</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">weekdays</span> {</span> Mon, Tue, Wed, Thu, Fri, Sat, Sun };
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">weekdays</span> <span class="hljs-title">day</span>;</span>
+    day = Sat; <span class="hljs-comment">// &lt;-- this is why enums are useful</span>
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="underthehood">Under the hood</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">weekdays</span> {</span> Mon, Tue, Wed, Thu, Fri, Sat, Sun }
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">weekdays</span> <span class="hljs-title">day</span>;</span>
+    day = Sat;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"The actual value in day is: %d\n, day);
+    
+    return 0;
+}
+</span></code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="advantagesoverotherapproaches">Advantages over other approaches</h2>
+
+<ul>
+<li>We provide limitations on the possible values (has to be defined in the enum)</li>
+<li>We give a nice label to values (Sat)
+
+<ul>
+<li>We don't have to remember that 1 is Monday <em>(or was it 0? 🤔)</em></li>
+</ul></li>
+<li>Could use <code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span></span></code> but these can clutter our code if we have many</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="struct🤝enum"><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span></span></code> 🤝 <code class="hljs angelscript"><span class="hljs-keyword">enum</span></code></h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">student_status</span> {</span> Enrolled, Withdrawn, Leave }
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">student</span> {</span>
+    <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">student_status</span> <span class="hljs-title">status</span>;</span>
+    <span class="hljs-keyword">int</span> age;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="feedback">Feedback</h3>
+<div class="single-image-wrapper"><figure><img src="images/25t2_lecture_qr.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>

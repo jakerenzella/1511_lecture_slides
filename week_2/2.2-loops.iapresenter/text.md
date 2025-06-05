@@ -13,7 +13,7 @@
 	- [ ] Custom data types
 ---
 ## Live lecture code
-	[https://cgi.cse.unsw.edu.au/~cs1511/24T2/live/week_2/](https://cgi.cse.unsw.edu.au/~cs1511/24T2/live/week_2/)
+	[https://cgi.cse.unsw.edu.au/~cs1511/25T2/live/week_2/](https://cgi.cse.unsw.edu.au/~cs1511/25T2/live/week_2/)
 Link will be pasted in the Stream Chat
 ---
 ## if statements recap
@@ -276,7 +276,7 @@ struct student {
 ```
 ---
 ### Feedback
-/assets/QRCode for COMP1511 Lecture Feedback.png
+/assets/25t2_lecture_qr.png
 size: contain
 
 

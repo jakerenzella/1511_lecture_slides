@@ -7,9 +7,7 @@
 ---
 ### Feedback overview
 	* We like the lecture format, quality and in-person lectures
-	* We, on average, seem to like the pace
-	* We would like to see the slides up earlier
-	* Less typos!
+	* We, on average, seem to like the pace, maybe slow it down a little for demos
 ---
 ## Last week
 	- [x] Went to tute/lab
@@ -30,7 +28,7 @@
 	- stands for *print formatted*
 	- Need to import `#include <stdio.h>` to use
 ---
- 
+
 	### What will this print out?
 x: top
 y: left
@@ -341,7 +339,7 @@ In this particular example, the conditional loop version is better, however sent
 ## DEMO
 ---
 ### Feedback
-/assets/QRCode for COMP1511 Lecture Feedback.png
+/assets/25t2_lecture_qr.png
 size: contain
 
 
