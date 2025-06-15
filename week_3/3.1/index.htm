@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/zurich.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<style>
+:root{
+--logo: ;
+--darkaccent1color: #000;
+--lightaccent1color: #FFF;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #FFF;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #FFF;
+--darkbackgroundcolor: #000;
+--bodyfont: roboto;
+--titlefont: Helvetica;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="week3lecture1">Week 3 Lecture 1</h1>
+
+<h4 id="proceduresandfunctions">Procedures and functions</h4></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light full-image-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/image%20(5).png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h2 id="helpsessions">Help Sessions</h2>
+
+<ul>
+<li>https://discourse02.cse.unsw.edu.au/25T2/COMP1511/t/help-sessions-starting-this-week-week-3/134</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h2 id="week2recap">Week 2 recap</h2>
+
+<h4 id="nestedloops">Nested loops</h4>
+
+<ul>
+<li>Simply, a while loop within a while loop</li>
+<li>Useful for 2-dimensional data (like grids)</li>
+</ul>
+
+<pre><code class="bash hljs">   col
+row 1 2 3 4 5
+    1 2 3 4 5
+    1 2 3 4 5
+    1 2 3 4 5
+    1 2 3 4 5
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.485rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ROWS 5</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> COLUMNS 5</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">while</span> (i &lt; ROWS) {
+        <span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (j &lt;= COLUMNS) {
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, j);
+            j++;
+        }
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+        i++;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light v-split-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h3 id="structs">structs</h3>
+
+<ul>
+<li>A defined structure of data types, each accessible</li>
+<li>Memory is set aside for each field in each struct</li>
+<li>Useful for assigning a variable to an organised record of data</li>
+</ul>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">pokemon</span> {</span>
+    <span class="hljs-keyword">int</span> hp;
+    <span class="hljs-keyword">double</span> weight
+};
+</code></pre></div>
+        <div style=""><h3 id="enums">enums</h3>
+
+<ul>
+<li>A possible set of values</li>
+<li>Useful for creating labels in your code</li>
+</ul>
+
+<pre><code class="c hljs c-like"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">elemental_type</span> {</span> FIRE, WATER, GRASS, DARK }; 
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="week3lecture1">Week 3 Lecture 1</h1>
+
+<h4 id="proceduresandfunctions">Procedures and functions</h4></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="functions">Functions</h1>
+
+<ul>
+<li>So far, you have used functions in your code</li>
+<li>Examples include <code class="hljs arduino">printf</code>, <code class="hljs cpp">scanf</code>, <code class="hljs css"><span class="hljs-selector-tag">main</span></code>...</li>
+<li>What actually are these?</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h4 id="functions">Functions</h4>
+
+<ul>
+<li>Functions are reusable blocks of code</li>
+<li>Functions (may) have:
+
+<ul>
+<li><strong>input</strong> (parameters)</li>
+<li><strong>actions</strong> (side effects)</li>
+<li><strong>output</strong> (results)</li>
+</ul></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="functions">Functions</h4>
+
+<ul>
+<li>We <strong>call</strong> functions to execute their body, providing any input necessary</li>
+<li>We can access the result of the function</li>
+<li>We can call a function from anywhere in our programs</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h3 id="functiondefinitionexample">Function definition example</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{
+    <span class="hljs-keyword">return</span> x + y;
+}
+</code></pre>
+
+<ul>
+<li><code class="hljs gams"><span class="hljs-function"><span class="hljs-title">int</span></span> ...</code> -&gt; return type (what <strong>type</strong> should the result be</li>
+<li><code class="hljs avrasm"><span class="hljs-keyword">add</span></code> -&gt; the name of the function</li>
+<li><code class="hljs angelscript">(<span class="hljs-built_in">int</span> x, <span class="hljs-built_in">int</span> y)</code> -&gt; the <strong>parameters</strong>, what sequence and type of input must be passed in?</li>
+<li><code class="hljs kotlin"><span class="hljs-keyword">return</span></code> -&gt; evaluate the expression and return the result</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h3 id="functioncallsyntax">Function call syntax</h3>
+
+<pre><code class="c hljs c-like">add(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>);
+</code></pre>
+
+<ul>
+<li>After we define functions, we want to use them</li>
+<li>The <code class="hljs clojure">()</code> after the name of the function means <strong>call</strong></li>
+<li>We must pass in the correct sequence of <strong>arguments</strong> of the correct type (<code class="hljs csharp"><span class="hljs-built_in">int</span> <span class="hljs-keyword">add</span></code> required two integers).</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h3 id="functioncalling">Function calling</h3>
+
+<p>We can pass in variables too</p>
+
+<pre><code class="c hljs c-like"><span class="hljs-comment">// A simple function which accepts two integers (x, y),</span>
+<span class="hljs-comment">// and returns the result (int) of adding them.</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{
+    <span class="hljs-keyword">return</span> x + y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">int</span> year_born = <span class="hljs-number">1994</span>;
+    <span class="hljs-keyword">int</span> age = <span class="hljs-number">29</span>;
+    
+    add(year_born, age);
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h3 id="retrievingtheresultofafunction">Retrieving the result of a function</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-comment">// A simple function which accepts two integers (x, y),</span>
+<span class="hljs-comment">// and returns the result (int) of adding them.</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{
+    <span class="hljs-keyword">return</span> x + y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">int</span> year_born = <span class="hljs-number">1994</span>;
+    <span class="hljs-keyword">int</span> age = <span class="hljs-number">29</span>;
+    
+    <span class="hljs-keyword">int</span> current_year = add(year_born, age);
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="demo">DEMO</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h2 id="functionsterminology">Functions terminology</h2>
+
+<ul>
+<li><strong>return type</strong> -&gt; the type of data returned by the function</li>
+<li><strong>result</strong> -&gt; the actual value returned from a function call</li>
+<li><strong>parameters</strong> -&gt; the type, and sequence of data to be passed into a function (the placeholders)</li>
+<li><strong>argument</strong> -&gt; the actual value passed into a function's parameters when called</li>
+<li><strong>return</strong> -&gt; the keyword used to end a function and return the result following</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="procedures">Procedures</h2>
+
+<p>not a <em>real</em> thing in C, but a useful way to think about some types and roles of functions</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h3 id="procedures">Procedures</h3>
+
+<ul>
+<li>Not all functions have to return a result</li>
+<li>We call these <em>void functions</em>, or <em>procedures</em></li>
+<li>Procedures <strong>do</strong> something, but don't have a result</li>
+<li>procedures (usually) have a side-effect</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light v-split-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="procedures">procedures</h3>
+
+<p><code class="hljs ebnf"><span class="hljs-attribute">shut_door</span></code></p>
+
+<p>side effect?</p>
+
+<p>result?</p></div>
+        <div style=""><h3 id="functions">functions</h3>
+
+<p><code class="hljs ebnf"><span class="hljs-attribute">check_door_shut</span></code></p>
+
+<p>side effect?</p>
+
+<p>result?</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h3 id="proceduresyntax">procedure syntax</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">check_door_shut</span><span class="hljs-params">()</span> </span>{
+
+}
+</code></pre>
+
+<ul>
+<li>This is a function which returns nothing (void)</li>
+<li>We could call this a procedure</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="ordermatters">Order matters</h2>
+
+<p>Functions/procedures have to be defined before they care called</p>
+
+<ul>
+<li>we can get around this with <em>function prototypes</em></li>
+<li>Place <code class="hljs arduino"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>;</code> at the top of your file to define the int add function for later use</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h3 id="whenwritingfunctionsinyourprogramthink:">When writing functions in your program, think:</h3>
+
+<ul>
+<li>What <strong>must</strong> I give this function so it can do its job?</li>
+<li>What should it be named?</li>
+<li>What should it return back to me to achieve its goal? (If anything).</li>
+<li>Am I re-writing code that could be turned into a reusable function?</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="functionsareveryimportant">Functions are very important</h3>
+
+<ul>
+<li>They change how we think about code</li>
+<li>When you come across useful, repeatable functionality - make it a function</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="01∞">0, 1, ∞</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="lecturefeedback">Lecture Feedback</h3>
+<div class="single-image-wrapper"><figure><img src="images/25t2_lecture_qr.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>

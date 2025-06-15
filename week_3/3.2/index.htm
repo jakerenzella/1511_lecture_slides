@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/zurich.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<style>
+:root{
+--logo: ;
+--darkaccent1color: #000;
+--lightaccent1color: #FFF;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #FFF;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #FFF;
+--darkbackgroundcolor: #000;
+--bodyfont: Helvetica;
+--titlefont: Helvetica;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="comp1511">COMP1511</h1>
+
+<h2 id="staticarrays">Static arrays</h2>
+
+<h3 id="week3lecture2">Week 3 Lecture 2</h3></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="functionsproceduresrecap">functions/procedures recap</h2>
+
+<ul>
+<li>Reusable blocks of code</li>
+<li>Callable multiple times</li>
+<li>variables within a function are scoped to that function</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h3 id="pifunction">PI function</h3>
+
+<p>Would be annoying to write this every time we need to calculate!</p>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">pi</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">double</span> sum = <span class="hljs-number">0.0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) {
+    sum += (<span class="hljs-number">-1.0</span>) * <span class="hljs-built_in">pow</span>(<span class="hljs-number">1.0</span> / <span class="hljs-number">2.0</span>, i) / (i + <span class="hljs-number">1</span>);
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">4.0</span> * sum;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h2 id="forwarddeclaration">Forward declaration</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">double</span> calculated_pi = pi();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">pi</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">double</span> sum = <span class="hljs-number">0.0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) {
+    sum += (<span class="hljs-number">-1.0</span>) * <span class="hljs-built_in">pow</span>(<span class="hljs-number">1.0</span> / <span class="hljs-number">2.0</span>, i) / (i + <span class="hljs-number">1</span>);
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">4.0</span> * sum;
+}
+</code></pre>
+
+<p>^ problem! <code class="hljs css"><span class="hljs-selector-tag">main</span></code> doesn't know that pi exists yet!</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.578rem;">
+        <div style=""><h2 id="forwarddeclaration">Forward declaration</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">pi</span><span class="hljs-params">()</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">double</span> calculated_pi = pi();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">pi</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">double</span> sum = <span class="hljs-number">0.0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) {
+    sum += (<span class="hljs-number">-1.0</span>) * <span class="hljs-built_in">pow</span>(<span class="hljs-number">1.0</span> / <span class="hljs-number">2.0</span>, i) / (i + <span class="hljs-number">1</span>);
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">4.0</span> * sum;
+}
+</code></pre>
+
+<p>^ Solved! We forward declared pi!</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="quickfunctionsrecapdemo">Quick functions recap demo</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="arrays">Arrays</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="sofarwecanstoreasingleitemineachvariable">So far, we can store a single item in each variable</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whatifyouwantedtostoremanyvalues">What if you wanted to store many values?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h3 id="numberoficecreamseaten">Number of ice creams eaten</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> day_1 = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">int</span> day_2 = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">int</span> day_3 = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">int</span> day_4 = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">int</span> day_5 = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">int</span> day_6 = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> day_7 = <span class="hljs-number">3</span>;
+<span class="hljs-comment">// Any day with 3 or more scoops is too much! </span>
+<span class="hljs-keyword">if</span> (day_1 &gt;= <span class="hljs-number">3</span>){
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Too much ice cream\n"</span>); 
+}
+<span class="hljs-keyword">if</span> (day_2 &gt;= <span class="hljs-number">3</span>) {...
+</code></pre>
+
+<p>Seem repetitive?</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><ul>
+<li>Many variables would clutter the program</li>
+<li>Many variables would not always be efficient</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="datastructures">Data structures</h2>
+
+<ul>
+<li>Are common structures (not structs) used to store multiples of data
+
+<ul>
+<li>Usually (especially in COMP1511) of the same data type</li>
+</ul></li>
+<li>Can scale, easily storing a handful, up to thousands, or more elements of data!</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="datastructuresincomp1511">Data structures in COMP1511</h2>
+
+<p>We will look primarily at two data structures:</p>
+
+<ul>
+<li>arrays (today)</li>
+<li><p>linked lists (future)</p>
+These are very, very powerful data structures you will use forever</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="arrays">Arrays</h2>
+
+<ul>
+<li>A collection of data, all of the same type. (homogonous)</li>
+<li>We have a single identifier for the entire array</li>
+<li>It is a random access data structure, meaning we can access any element in the array at any time</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="arrays">Arrays</h2>
+
+<ul>
+<li>We can ready or modify individual elements</li>
+<li>It is a <strong><em>contiguous</em></strong> data structure</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="contigu-what">contigu-what?</h2>
+
+<h3 id="letsvisualisearrays">Let's visualise arrays</h3></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="staticarrayshaveasetsize">Static arrays have a set size</h2>
+
+<p>(which you specify)</p>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="intarray">int array</h2>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard.png" class=" size-contain position-center-center"></figure></div>
+
+<ul>
+<li>This int array will store 5 integers</li>
+<li>32bit * 5 elements = 160 bits of memory used</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="thearraydeclarationsyntax">The array declaration syntax</h3>
+
+<p><code class="hljs abnf">int ice_cream_per_day[<span class="hljs-number">7</span>]<span class="hljs-comment">;</span></code></p>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_1.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="declareinitialise">Declare + initialise</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> ice_cream_per_day[<span class="hljs-number">7</span>] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>};
+</code></pre>
+
+<p>^ Note you can only do this when you declare, not later!</p>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> ice_cream_per_day[<span class="hljs-number">7</span>] = {};
+</code></pre>
+
+<p>^ Will initialise all elements to 0</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> ice_cream_per_day[<span class="hljs-number">7</span>] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>};
+</code></pre>
+
+<p>Creates:</p>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_2.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="accessingelements">Accessing elements</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> first_day_ice_creams = ice_cream_per_day[<span class="hljs-number">0</span>];
+</code></pre>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_3.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="writingelements">Writing elements</h3>
+
+<pre><code class="c hljs c-like">ice_cream_per_day[<span class="hljs-number">0</span>] = <span class="hljs-number">5</span>;
+</code></pre>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_4.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="arrays🤝loops">arrays 🤝 loops</h2>
+
+<h3 id="thepowerofarrays">The power of arrays</h3></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> ice_cream_per_day[<span class="hljs-number">7</span>] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>};
+
+<span class="hljs-comment">// read each element</span>
+ice_cream_per_day[<span class="hljs-number">0</span>];
+ice_cream_per_day[<span class="hljs-number">1</span>];
+ice_cream_per_day[<span class="hljs-number">2</span>];
+ice_cream_per_day[<span class="hljs-number">3</span>];
+ice_cream_per_day[<span class="hljs-number">4</span>];
+ice_cream_per_day[<span class="hljs-number">5</span>];
+ice_cream_per_day[<span class="hljs-number">6</span>];
+</code></pre>
+
+<p>^ Does this look repetitive?</p>
+
+<p>If only we had a way to count :( </p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light v-split-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><p>Bad</p>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> ice_cream_per_day[<span class="hljs-number">7</span>] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>};
+
+<span class="hljs-comment">// read each element</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ice_cream_per_day[<span class="hljs-number">0</span>]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ice_cream_per_day[<span class="hljs-number">1</span>]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ice_cream_per_day[<span class="hljs-number">2</span>]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ice_cream_per_day[<span class="hljs-number">3</span>]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ice_cream_per_day[<span class="hljs-number">4</span>]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ice_cream_per_day[<span class="hljs-number">5</span>]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ice_cream_per_day[<span class="hljs-number">6</span>]);
+</code></pre></div>
+        <div style=""><p>Good</p>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> ice_cream_per_day[<span class="hljs-number">7</span>] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>};
+
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">7</span>) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ice_cream_per_day[i]);
+    i++; <span class="hljs-comment">// i = i + 1;</span>
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="demo">Demo</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="lecturefeedback">Lecture Feedback</h3>
+<div class="single-image-wrapper"><figure><img src="images/25t2_lecture_qr.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>

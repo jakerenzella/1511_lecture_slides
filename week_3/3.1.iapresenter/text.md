@@ -1,7 +1,12 @@
 # Week 3 Lecture 1
 #### Procedures and functions
 
-
+---
+/assets/image (5).png
+size: contain
+---
+## Help Sessions
+	* https://discourse02.cse.unsw.edu.au/25T2/COMP1511/t/help-sessions-starting-this-week-week-3/134
 ---
 ## Week 2 recap
 #### Nested loops
@@ -198,7 +203,6 @@ void check_door_shut() {
 * If you have a single need for some code, write it but don't make it a function
 * If you have a second need for the code, make it a function
 ---
-### Feedback
-	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD) 
-/assets/QRCode for COMP1511 Lecture Feedback.png
+### Lecture Feedback
+/assets/25t2_lecture_qr.png
 size: contain
