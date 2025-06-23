@@ -1,5 +1,14 @@
 # 2D Arrays
 ---
+## Week 5 Lab Exam
+	* This course has an invigilated final exam
+	* To prepare you on the format, we are having a week 5 in-lab exam
+	* Please attend your week 5 lab as scheduled
+	* Worth 1 mark
+	https://buytickets.at/comp1511unsw/1741784 
+	Access code is COMP1511
+	***Email course account if you can't attend***
+---
 ## Strings recap
 	* An array of chars
 	* We have a single identifier for the string
@@ -38,17 +47,35 @@ int main(void) {
 	^ Remember we can't reassign like:
 	 `name = "Mr Otterington";`
 ---
-## 2D arrays
+# Arrays of Structs
+## Concept Introduction
+
+---
+## Structs
+	* Structs allow us to store groupings of data
+	* We define structs above main and specify each field's type
+	* We use the `.` operator to access the field once we initialise a struct!
+---
+## Arrays
+	* We can create arrays to store multiples of data
+	* They are homogenous, so can only store the same type
+
 ---
 	We can have arrays of type (char, int, struct, enum)
 /assets/Clipboard_3.png
 size: contain
 
 ---
+## Structs 🤝 Arrays?
+---
+## Yes!
+---
 ## Array of structs
 /assets/Clipboard_7.png
 size: contain
 	* Use `students[1].name;` to access element 1's name
+---
+## 2D arrays
 ---
 ## Array of arrays
 ### 2D arrays
