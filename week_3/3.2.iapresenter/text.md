@@ -2,6 +2,9 @@
 ## Static arrays
 ### Week 3 Lecture 2
 ---
+## CENSUS
+	==Thursday 26th 11:59PM==
+---
 ## functions/procedures recap
 	* Reusable blocks of code
 	* Callable multiple times

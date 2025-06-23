@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/zurich.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<style>
+:root{
+--logo: ;
+--darkaccent1color: #000;
+--lightaccent1color: #FFF;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #FFF;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #FFF;
+--darkbackgroundcolor: #000;
+--bodyfont: Helvetica;
+--titlefont: Helvetica;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="strings">Strings</h1>
+
+<h2 id="orarrayspt2">Or, arrays Pt 2</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="revisionsessions">Revision Sessions</h2>
+
+<ul>
+<li><p>Week 4 Wednesday 25/06/2025 12PM-2PM - Bongo/Tabla Lab (K17 G07/G08)</p>
+<strong>Sign up at</strong>: https://buytickets.at/comp1511unsw/1290763 (Access Code: "COMP1511", also linked on the forum)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="assignment1">Assignment 1</h2>
+
+<ul>
+<li>Releasing <em>really</em> soon</li>
+<li>Watch the Assignment Walkthrough video</li>
+<li>Submission in ~Week 7</li>
+<li>Worth 20%</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="arraysrecap">Arrays recap</h2>
+
+<ul>
+<li>A collection of data, all of the same type. (homogeneous)</li>
+<li>We have a single identifier for the entire array</li>
+<li>It is a random access data structure, meaning we can access any element in the array at any time</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="thearraydeclarationsyntax">The array declaration syntax</h3>
+
+<p><code class="hljs abnf">int ice_cream_per_day[<span class="hljs-number">7</span>]<span class="hljs-comment">;</span></code></p>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_3.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="declareinitialise">Declare + initialise</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> ice_cream_per_day[<span class="hljs-number">7</span>] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>};
+</code></pre>
+
+<p>^ Note you can only do this when you declare, not later!</p>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> ice_cream_per_day[<span class="hljs-number">7</span>] = {};
+</code></pre>
+
+<p>^ Will initialise all elements to 0</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h2 id="somecorrections">Some corrections</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> my_data[] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>};
+</code></pre>
+
+<p>^ Will create a 7-element array</p>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> my_data[<span class="hljs-number">14</span>] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>};
+</code></pre>
+
+<p>^ Will create a 14-element array, with the first 7 elements then 7 0'd out</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="accessingelements">Accessing elements</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> first_day_ice_creams = ice_cream_per_day[<span class="hljs-number">0</span>];
+</code></pre>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_4.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="writingelements">Writing elements</h3>
+
+<pre><code class="c hljs c-like">ice_cream_per_day[<span class="hljs-number">0</span>] = <span class="hljs-number">5</span>;
+</code></pre>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_5.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="strings">Strings</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="strings">Strings!</h2>
+
+<ul>
+<li>Strings are multi-character words</li>
+<li><code class="hljs 1c"><span class="hljs-string">"Jake Renzella"</span></code> -&gt; is a string with 13 characters!</li>
+<li>Strings are great! They are everywhere!</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light v-split-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="badnews">Bad news</h2>
+
+<p>C doesn't have a string data type :(</p></div>
+        <div style=""><h2 id="goodnews">Good news</h2>
+
+<p>C has arrays! :)</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="anintarray">An int array</h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> numbers[<span class="hljs-number">7</span>] = {<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>}
+</code></pre>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_4.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="achararray">A char array</h3>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_1.png" class=" size-contain position-center-center"></figure></div>
+
+<p>We can build our own string type by using an array of chars!</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="stringsincarechararrays">Strings in C are char arrays</h2>
+
+<ul>
+<li>A collection of characters</li>
+<li>C does know how to work with <code class="hljs scss">char<span class="hljs-selector-attr">[]</span></code>s</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">char</span> name[<span class="hljs-number">3</span>] = {<span class="hljs-string">'G'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>};
+    <span class="hljs-comment">// change name to Jake</span>
+    <span class="hljs-comment">// :( can't, won't fit</span>
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_STR 50</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">char</span> name[MAX_STR] = {<span class="hljs-string">'J'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'k'</span>, <span class="hljs-string">'e'</span>};
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="newproblem">New problem</h3>
+
+<h4 id="howdoescknowwherethestringends">How does C know where the string ends?</h4>
+
+<p><code class="hljs pgsql"><span class="hljs-type">char</span> <span class="hljs-type">name</span>[MAX_STR] = {<span class="hljs-string">'J'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'k'</span>, <span class="hljs-string">'e'</span>};</code></p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="thenullterminator">The null terminator</h2>
+
+<ul>
+<li>Remember in C, we don't know when arrays end</li>
+<li>We have to keep track of the length ourselves</li>
+<li>We can't always do this with <code class="hljs scss">char<span class="hljs-selector-attr">[]</span></code>...</li>
+<li>Instead, we place a special character called the null terminator at the end of our character arrays <code class="hljs livescript"><span class="hljs-string">\0</span></code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="char"><code class="hljs scss">char<span class="hljs-selector-attr">[]</span></code></h2>
+<div class="single-image-wrapper"><figure><img src="images/Clipboard_1.png" class=" size-contain position-center-center"></figure></div>
+
+<p>Notice the <code class="hljs livescript"><span class="hljs-string">\0</span></code> at the end! This means that C will know when it reaches the end of the array</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h3 id="howtousestringsinc">How to use strings in C</h3>
+
+<ul>
+<li>Because strings are character arrays, the type is <code class="hljs scss">char<span class="hljs-selector-attr">[]</span></code></li>
+<li>There are two ways to declare a string, here's one:</li>
+</ul>
+
+<pre><code class="C hljs"><span class="hljs-keyword">char</span> word[] = {<span class="hljs-string">'h'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'\0'</span>};
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="anyonethinkthatsannoying">Anyone think that's annoying?</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h3 id="stringsareverycommon">Strings are very common</h3>
+
+<p>So there are easier ways to use them:</p>
+
+<pre><code class="C hljs"><span class="hljs-keyword">char</span> word[] = <span class="hljs-string">"hello"</span>;
+</code></pre>
+
+<ul>
+<li>This is exactly the same as the previous example</li>
+<li><mark>It includes the null terminator!</mark></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h3 id="stringliterals">String literals</h3>
+
+<h4 id="jake"><code class="hljs 1c"><span class="hljs-string">"Jake!"</span></code></h4>
+
+<ul>
+<li>uses double quotes <code class="hljs 1c"><span class="hljs-string">"</span></code> to wrap the string literal</li>
+<li>single quote for characters!</li>
+<li><p>Used to assign strings to <code class="hljs scss">char<span class="hljs-selector-attr">[]</span></code> easily:</p>
+<code class="hljs pgsql"><span class="hljs-type">char</span> <span class="hljs-type">name</span>[] = "Jake Renzella";</code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="usingstrings">Using strings</h3>
+
+<ul>
+<li>printing: <code class="hljs arduino">printf</code> or <code class="hljs cpp">fputs</code></li>
+<li>scanning: <code class="hljs ebnf"><span class="hljs-attribute">fgets</span></code></li>
+<li>Both included in <code class="hljs apache"><span class="hljs-section">&lt;stdio.h&gt;</span></code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="fgets"><code class="hljs ebnf"><span class="hljs-attribute">fgets</span></code></h2>
+
+<ul>
+<li>Reads a string from the terminal</li>
+<li><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">fgets</span><span class="hljs-params">(array[], length, stream)</span></span></code>
+
+<ul>
+<li><strong>array[]</strong> -&gt; The array that the string will be stored</li>
+<li><strong>length</strong> -&gt; The number of characters that can be read in</li>
+<li><strong>stream</strong> -&gt; The origin of the string (we always use <code class="hljs cpp">stdin</code>)</li>
+</ul></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h2 id="fgetsusage"><code class="hljs ebnf"><span class="hljs-attribute">fgets</span></code> usage</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-comment">// Declare the array which will contain the string. Note, we don't know how big the string will be, so let's come up with a maximum.</span>
+<span class="hljs-keyword">char</span> my_string[MAX_LENGTH]
+
+<span class="hljs-comment">// read the string in</span>
+fgets(my_string, MAX_LENGTH, <span class="hljs-built_in">stdin</span>);
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="readingstringsinaloop">Reading strings in a loop</h2>
+
+<ul>
+<li>We can read until <code class="hljs mathematica"><span class="hljs-variable">CTRL</span><span class="hljs-operator">+</span><span class="hljs-built_in">D</span></code> is entered in the terminal by calling <code class="hljs ebnf"><span class="hljs-attribute">fgets</span></code> in a loop</li>
+<li><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">fgets</span><span class="hljs-params">()</span></span></code> stops reading when either length-1 characters are read, newline character is read or an end of file is reached, whichever comes first</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.578rem;">
+        <div style=""><h2 id="readingstringsinaloop">Reading strings in a loop</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-comment">// I know my string will never need to be more than 15 chars</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_LENGTH 15</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">char</span> name[MAX_LENGTH];
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Enter your name: "</span>);
+
+    <span class="hljs-comment">// fgets reads the entire string, including the newline character</span>
+    <span class="hljs-keyword">while</span> (fgets(name, MAX_LENGTH, <span class="hljs-built_in">stdin</span>) != <span class="hljs-literal">NULL</span>) {
+        <span class="hljs-comment">// every time this runs, we update `name`!</span>
+    }
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="printingstrings">Printing strings</h2>
+
+<h3 id="fputsarraystream"><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">fputs</span><span class="hljs-params">(array[], stream)</span></span></code></h3>
+
+<ul>
+<li><strong>array[]</strong> -&gt; the character array to be printed</li>
+<li><strong>stream</strong> -&gt; the location to print, always use <code class="hljs cpp">stdout</code> in COMP1511</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="printingstrings">Printing strings</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">char</span> name[] = <span class="hljs-string">"Jake"</span>;
+<span class="hljs-built_in">fputs</span>(name, <span class="hljs-built_in">stdout</span>);
+</code></pre>
+
+<p>^ Why doesn't fputs need the LENGTH, like <code class="hljs ebnf"><span class="hljs-attribute">fget</span></code>?</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h3 id="otherusefulstringfunctions">Other useful string functions</h3>
+
+<ul>
+<li><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">strlen</span><span class="hljs-params">()</span></span></code> -&gt; gives us the length of the string (excluding the <code class="hljs livescript"><span class="hljs-string">\0</span></code>).</li>
+<li><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">strcpy</span><span class="hljs-params">()</span></span></code> -&gt; copy the contents of one string to another</li>
+<li><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">strcat</span><span class="hljs-params">()</span></span></code> -&gt; join one string to the end of another (concatenate)</li>
+<li><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">strcmp</span><span class="hljs-params">()</span></span></code> -&gt; compare two strings</li>
+<li><p><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">strchr</span><span class="hljs-params">()</span></span></code> -&gt; find the first occurrence of a character</p>
+note: some of these may require <code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span></code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="demo">Demo</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="feedback">Feedback</h3>
+<div class="single-image-wrapper"><figure><img src="images/25t2_lecture_qr.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>

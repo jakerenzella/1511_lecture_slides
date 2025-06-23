@@ -1,17 +1,16 @@
 # Strings
 ## Or, arrays Pt 2
 ---
-## Help Sessions and Revision Sessions
-	* Week 4 Thursday 11am-1pm - K17 Lvl1 113 Seminar Room (Bring Your Own Device!)
-	* Week 4 Friday 1pm-3pm - Online via Microsoft Teams
+## Revision Sessions
+	* Week 4 Wednesday 25/06/2025 12PM-2PM - Bongo/Tabla Lab (K17 G07/G08)
+Week 4 Wednesday 25/06/2025 12PM-2PM - Online General | COMP1511/1911 Help Sessions + Revision Sessions | T2, 2025 | Microsoft Teams
 If you are feeling behind, this is a great time for you to revise, get some practice in for topics to fill in any gaps and ask the tutors any questions! 
 	**Sign up at**: https://buytickets.at/comp1511unsw/1290763 (Access Code: "COMP1511", also linked on the forum) 
 ---
 ## Assignment 1
-	* Releasing soon
-	* Watch the Assignment Walkthrough live stream
-	* Watch the Catchup-up video
-	* Submission in Week 7?
+	* Releasing *really* soon
+	* Watch the Assignment Walkthrough video
+	* Submission in ~Week 7
 	* Worth 20%
 ---
 ## Arrays recap
@@ -208,8 +207,8 @@ You can printf a string with %s, but there are security problems with this appro
 ---
 ## Printing strings
 ```c
-char name[] = "Jake"
-fputs(name, stdout)
+char name[] = "Jake";
+fputs(name, stdout);
 ```
 	^ Why doesn't fputs need the LENGTH, like `fget`?
 
@@ -226,6 +225,5 @@ fputs(name, stdout)
 
 ---
 ### Feedback
-	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
-/assets/QRCode for COMP1511 Lecture Feedback.png
+/assets/25t2_lecture_qr.png
 size: contain
