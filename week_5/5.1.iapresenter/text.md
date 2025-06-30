@@ -1,3 +1,13 @@
+---
+## Week 5 Lecture 1
+
+---
+## Tools to help you
+	* DCC Help 
+	* DCC Sidekick
+	* https://bytesized-prod.vercel.app
+---
+
 # Style
 	How to write clean code
 ---
@@ -152,8 +162,6 @@ We save a whopping 2 lines of code!
 ---
 ## Connect 4
 ---
-
 ### Feedback
-	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
-/assets/QRCode for COMP1511 Lecture Feedback.png
-size: contain
+/assets/25t2_lecture_qr.png
+

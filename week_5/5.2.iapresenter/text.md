@@ -153,11 +153,11 @@ int main(void) {
 ## How?
 ---
 ## Arrays decay to pointers
-	* Arrays point to the memory location whcih contains the first element
+	* Arrays point to the memory location which contains the first element
 	* As arrays are contiguous, we can then move through the memory sequentially to find the next values
 	* Very cool!
 ---
 ### Feedback
-	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
-/assets/QRCode for COMP1511 Lecture Feedback.png
+/assets/25t2_lecture_qr.png
 size: contain
+
