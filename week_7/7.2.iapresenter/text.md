@@ -122,5 +122,5 @@ size: contain
 ---
 ### Feedback
 	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
-/assets/QRCode for COMP1511 Lecture Feedback.png
+/assets/25t2_lecture_qr.png
 size: contain

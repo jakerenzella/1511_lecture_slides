@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/zurich.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<style>
+:root{
+--logo: ;
+--darkaccent1color: #000;
+--lightaccent1color: #FFF;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #FFF;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #FFF;
+--darkbackgroundcolor: #000;
+--bodyfont: Helvetica;
+--titlefont: Helvetica;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="assignment1duereminder">Assignment 1 due reminder</h2>
+
+<p>Good luck &lt;3</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="pointersrecap">Pointers Recap</h2>
+
+<ul>
+<li>Used to store a memory address</li>
+<li>Can point to any type of data (int, struct, array)</li>
+<li>The data at the address can be accessed (dereference) <code class="hljs gams"><span class="hljs-comment">*</span></code></li>
+<li>The address at a variable can be retrieved (address_of) <code class="hljs 1c"><span class="hljs-meta">&amp;</span></code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="pointerssyntaxcheatsheet">Pointers syntax cheat sheet</h2>
+
+<ul>
+<li>Declare a pointer: <code class="hljs angelscript"><span class="hljs-built_in">int</span> *<span class="hljs-built_in">int</span>_pointer;</code></li>
+<li>Address of: <code class="hljs 1c"><span class="hljs-meta">&amp;my_variable;</span></code></li>
+<li>Dereference (Get the value at a pointer): <code class="hljs abnf">*int_pointer<span class="hljs-comment">;</span></code></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="dynamicarraysandmemory">Dynamic Arrays and Memory</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="thestack">The Stack</h2>
+
+<ul>
+<li>Where information about your program execution is stored
+
+<ul>
+<li>Which functions are called, in what order</li>
+<li>Which variables are created, and where</li>
+</ul></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><ul>
+<li>When a block of code is executed <code class="hljs clojure">{ }</code>, a stack frame is created</li>
+<li>When the block is completed, the stack frame is removed (and anything inside it destroyed)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whenastackframeiscreatedenoughmemorytostoreeverythingintheframeisallocatedtotheframe">When a stack frame is created, enough memory to store everything in the frame is allocated to the frame</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="thestack">The Stack</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">int</span> user_age = <span class="hljs-number">20</span>;
+    <span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[<span class="hljs-number">5</span>] = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>};
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light full-image-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Screenshot%202023-07-10%20at%206.19.41%20pm.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h2 id="thestack">The Stack</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add_two_ints</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+    <span class="hljs-keyword">int</span> sum = a + b;
+    <span class="hljs-keyword">return</span> sum;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">int</span> new_int = add_two_ints(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>);
+    
+    retrun <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light full-image-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Screenshot%202023-07-10%20at%206.20.36%20pm.png" class=" position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light cover-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="quickdemowhiteboard">Quick demo + whiteboard</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whatifwewanttocreatememorywithanundeterminedsize">What if we want to create memory with an undetermined size?</h2>
+
+<ul>
+<li>We can't use stack frames... the program needs to know how big the frame is before it creates it</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="enter:theheap">Enter: The Heap</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light v-split-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><ul>
+<li>The Heap is a large block of memory that sits outside the stack</li>
+<li>Unlike the stack, the heap is managed entirely by the programmer (in C)</li>
+<li>Nothing is automatically declared or destroyed in the Heap, you have to manage it all! (This can be dangerous)</li>
+<li><em>With great power, comes great responsibility</em></li>
+</ul></div>
+        <figure style=""><img src="images/Clipboard_11.png" class=" position-right-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="usingtheheap">Using the heap</h2>
+
+<p>C provides us some functions to interact with the heap.</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="malloc"><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">malloc</span><span class="hljs-params">()</span></span></code></h2>
+
+<ul>
+<li><code class="hljs cpp">malloc</code> -&gt; Memory Allocation (allocate memory on the heap)</li>
+<li>Returns a pointer to the location on the heap</li>
+<li>We can decide how large the allocation</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h2 id="callingmalloc">Calling <code class="hljs cpp">malloc</code></h2>
+
+<ul>
+<li><code class="hljs arduino">ptr = (cast-type*) <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">byte</span>-size)</code></li>
+</ul>
+
+<h2 id="example:">Example:</h2>
+
+<pre><code class="c hljs c-like"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-built_in">malloc</span>(<span class="hljs-number">1000</span>);
+    <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+    <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>) * <span class="hljs-number">50</span>);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="whiteboard">Whiteboard</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h2 id="dynamicarraysontheheap">Dynamic arrays on the heap</h2>
+
+<p>A common way of using malloc is to create dynamic arrays:</p>
+
+<pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+    <span class="hljs-keyword">int</span> num_elements;
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, num_elements);
+    
+    <span class="hljs-keyword">int</span> *data = <span class="hljs-built_in">malloc</span>(num_elements * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="freeingmallocddata">Freeing malloc'd data</h2>
+
+<ul>
+<li>This is where the responsibility comes in...</li>
+<li>C automatically frees stack frames after they finish, meaning we don't have to clean up after ourselves.</li>
+<li>We need to manually clean up the heap, otherwise we will cause a memory leak.</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="free"><code class="hljs cpp">free</code></h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> *data = <span class="hljs-built_in">malloc</span>(num_elements * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+...
+<span class="hljs-built_in">free</span>(data);
+</code></pre>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="realloc"><code class="hljs cpp">realloc</code></h3>
+
+<ul>
+<li>Either resizes the existing allocation (freeing what is no longer needed)</li>
+<li>Or allocates a new allocation</li>
+<li>Always returns the address of the new allocation, even if it's in the same position</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light section-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 0.953rem;">
+        <div style="">
+          <h3 id="realloc"><code class="hljs cpp">realloc</code></h3>
+
+<pre><code class="c hljs c-like"><span class="hljs-keyword">int</span> *data = <span class="hljs-built_in">malloc</span>(num_elements * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+num_elements += <span class="hljs-number">40</span>;
+
+data = <span class="hljs-built_in">realloc</span>(data, num_elements * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+...
+<span class="hljs-built_in">free</span>(data);
+</code></pre>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="rememberwecantreatpointerslikearrays">Remember, we can treat pointers like arrays</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light title-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="demo">Demo</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="fixed-size-headings light default-container wide present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="feedback">Feedback</h3>
+<div class="single-image-wrapper"><figure><img src="images/25t2_lecture_qr.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>
