@@ -1,5 +1,7 @@
 ## Assignment 2 releasing soon
 ---
+	* https://bytesized-prod.vercel.app/
+---
 	### End of this week or early next week
 	* Linked lists
 	* Dynamic memory

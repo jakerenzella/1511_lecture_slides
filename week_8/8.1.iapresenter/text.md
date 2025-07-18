@@ -45,7 +45,7 @@ size: contain
 	* A pointer to keep track of where the start of the list
 	* A way to create a node and then connect it into our list
 ---
-## Demo?
+## Demo
 ---
 ## Today's goals:
 	* insert_at_index
@@ -64,6 +64,5 @@ size: contain
 	3. Implement
 ---
 ### Feedback
-	[https://forms.office.com/r/K3PjvWebtD](https://forms.office.com/r/K3PjvWebtD)
-/assets/QRCode for COMP1511 Lecture Feedback.png
+/assets/25t2_lecture_qr.png
 size: contain
