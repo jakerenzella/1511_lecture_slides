@@ -4,16 +4,15 @@
 ---
 ## Exam Sessions
 	* One morning and one afternoon session on Thursday 21st August
-	* The form will be open until 12PM Midday Wednesday Week 10 (6th August), or until no more preferences can be accepted, after which no more preferences will be accepted.
-	* The preference form is available here: https://cgi.cse.unsw.edu.au/~exam/25T2/seating/register.cgi
+	* Afternoon session is full, so form is closed.
 ---
 ## Time and location
 	* The exact time and location of **your** exam session will be available mid Week 11, you will receive another email with instructions once it is available.
 ---
 ## Prac Exam
 	* Week 10 Labs you will be given an opportunity to try the exam environment with the practice exam.
-	* If you are an online tut-lab student and are interested in trying the final exam environment on a lab machine, please sign up to an existing in-person lab for week 10 via the following event. You can sign up via this link: https://buytickets.at/comp1511unsw/1328856
-	 (the access code is "COMP1511")
+	* If you are an online tut-lab student and are interested in trying the final exam environment on a lab machine, please sign up to an existing in-person lab for week 10 via the following event.
+	All info and tickets at: https://discourse02.cse.unsw.edu.au/25T2/COMP1511/t/online-students-sign-up-to-try-out-the-final-exam-environment/601
 ---
 ## Prac Exam Runthrough Video
 	* Alternatively, we have a recording of what the exam environment will look like. You can watch the video here:  https://youtu.be/O05-z35PJXQ 
